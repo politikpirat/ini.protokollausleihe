@@ -547,7 +547,7 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Sub aus_anzeige()
- Dim paaaus, paaprot As ADODB.Recordset
+ Dim paaaus, paaprot, paafach, paatyp As ADODB.Recordset
  Set paaaus = New ADODB.Recordset
  
  paaaus.Open "SELECT * FROM paa_ausleihe WHERE lfdAusleiheNr = " + Str(ausid), Conn
@@ -583,16 +583,25 @@ Sub aus_anzeige()
   List2.AddItem ("Protokolldaten")
   List2.AddItem (" ")
   If Not paaprot.EOF Then
+    Set paafach = New ADODB.Recordset
+    paafach.Open "SELECT * FROM paa_fach WHERE lfdFachNr = " + Str(paaprot!fach), Conn
+    paafach.MoveFirst
+    
+    Set paatyp = New ADODB.Recordset
+    paatyp.Open "SELECT * FROM paa_typ WHERE lfdTypNr = " + Str(paaprot!typ), Conn
+    paatyp.MoveFirst
+    
     paaprot.MoveFirst
     List2.AddItem ("Protokollnummer   : " + Str(paaprot!lfdProtokollNr))
-    List2.AddItem ("Fach              : " + Str(paaprot!fach))
+    List2.AddItem ("Fach              : " + paafach!Name)
     List2.AddItem ("Protokollordner   : " + paaprot!prüfer)
-    List2.AddItem ("Protokolltyp      : " + Str(paaprot!typ))
+    List2.AddItem ("Protokolltyp      : " + paatyp!Name)
     List2.AddItem ("akt. Ausleihe Nr. : " + Str(paaprot!aktAusleihe))
     List2.AddItem (" ")
   Else
     List2.AddItem ("Keine Protokolldaten vorhanden.")
   End If
+  paafach.Close
   paaprot.Close
  Else
     List2.AddItem ("Keine Ausleihedaten vorhanden")

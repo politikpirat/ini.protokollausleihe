@@ -1,10 +1,10 @@
 Type=Exe
 Form=main.frm
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\WINDOWS\system32\stdole2.tlb#OLE Automation
 Form=ausleihe.frm
 Object={67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0; MSADODC.OCX
-Reference=*\G{00000200-0000-0010-8000-00AA006D2EA4}#2.0#0#..\..\..\..\Programme\Gemeinsame Dateien\system\ado\msado20.tlb#Microsoft ActiveX Data Objects 2.0 Library
-Reference=*\G{3D5C6BF0-69A3-11D0-B393-00A0C9055D8E}#1.0#0#..\..\..\..\Programme\Gemeinsame Dateien\designer\MSDERUN.DLL#Microsoft Data Environment Instance 1.0
+Reference=*\G{00000200-0000-0010-8000-00AA006D2EA4}#2.0#0#..\..\..\Programme\Gemeinsame Dateien\system\ado\msado20.tlb#Microsoft ActiveX Data Objects 2.0 Library
+Reference=*\G{3D5C6BF0-69A3-11D0-B393-00A0C9055D8E}#1.0#0#..\..\..\Programme\Gemeinsame Dateien\designer\MSDERUN.DLL#Microsoft Data Environment Instance 1.0
 Form=bearbeiten.frm
 Form=bemerkung.frm
 IconForm="haupt"
